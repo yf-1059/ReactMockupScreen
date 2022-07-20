@@ -1,0 +1,26 @@
+@use "Base";
+@use "Color";
+@use "Shape";
+
+.light-grey {
+  color: Color.$light-grey;
+}
+
+.text-blue {
+  color: Color.$blue;
+}
+
+.text-purple {
+  color: Base.$primary-color;
+}
+
+.text-green {
+  color: Color.$green;
+}
+
+.icon {
+  width: 24px;
+  height: 12px;
+  margin: 10px;
+}
+
