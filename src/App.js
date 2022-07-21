@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/css/all.css';
+import './sass/App.scss';
 import Header from './Header.js'
-import './App.css';
 import Sidebar from './Sidebar.js';
 import BookingPage from './BookingPage.js';
 

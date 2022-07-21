@@ -15,7 +15,7 @@ export default function BookingDetailsCard() {
             <span className="fa fa-check-circle"></span>
             <span className="ps-2">Booking request recieved</span>
           </div>
-          <div className="ps-4 fs-7 fw-normal purple mt-1">
+          <div className="ps-4 fs-7 fw-normal text-purple mt-1">
             <span className="fa fa-clock"></span>
             <span className="ps-2">Awaiting confirmation from Hotel</span>
           </div>
@@ -39,7 +39,7 @@ export default function BookingDetailsCard() {
             <div className="col-md-2 col-sm-2"></div>
           </div>
           <div className="mt-4 grey-rectangle">
-            <div className="ps-4 fs-7 fw-semibold green">
+            <div className="ps-4 fs-7 fw-semibold text-green">
               <span className="fa fa-star"></span>
               <span className="ps-2">Rate your stay</span>
             </div>

@@ -14,7 +14,7 @@ export default function BookingPage() {
         Please update with the properity if your travel plans should change or if you wish
         to make any changes to your stay.
       </div>
-      <div className="fs-7 mt-3 blue">
+      <div className="fs-7 mt-3 text-blue">
         <span className="fa fa-chevron-right"></span>
         <span className="ps-2">Learn more about our premium subscription</span>
       </div>

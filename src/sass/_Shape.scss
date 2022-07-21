@@ -1,0 +1,51 @@
+@import "./Base";
+@import "./Color";
+
+@mixin shape($height, $width, $radius) {
+  height: $height;
+  width: $width;
+  border-radius: $radius;
+}
+
+%shape-background {
+  background-color: $primary-color;
+}
+
+.diamond {
+  @include shape(38px, 38px, 12px);
+  @extend %shape-background;
+  color: $white;
+  transform: rotate(45deg);
+}
+
+.square {
+  @include shape(42px, 42px, 4px);
+  background-color: $white;
+}
+
+.rectangle {
+  @extend %shape-background;
+  height: 40px;
+  border-radius: 6px;
+  padding-top: 4px;
+}
+
+.grey-rectangle {
+  background-color: $background-color;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  height: 100px;
+  padding-top: 20px;
+  padding-bottom: 90px;
+}
+
+.toggle-rectangle {
+  @include shape(20px, 40px, 1000px);
+  border-color: #EEEEEE;
+  border-style: solid;
+}
+
+.circle {
+  @include shape(16px, 16px, 50%);
+  @extend %shape-background;
+}
