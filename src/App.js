@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import './stylesheets/App.css';
+import './sass/App.scss';
 import Header from './Header.js'
 import Sidebar from './Sidebar.js';
 import BookingPage from './BookingPage.js';

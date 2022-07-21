@@ -1,21 +1,21 @@
-@use "Base";
-@use "Color";
-@use "Shape";
+@import "./Base";
+@import "./Color";
+@import "./Shape";
 
 .light-grey {
-  color: Color.$light-grey;
+  color: $light-grey;
 }
 
 .text-blue {
-  color: Color.$blue;
+  color: $blue;
 }
 
 .text-purple {
-  color: Base.$primary-color;
+  color: $primary-color;
 }
 
 .text-green {
-  color: Color.$green;
+  color: $green;
 }
 
 .icon {

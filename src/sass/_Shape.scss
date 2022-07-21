@@ -1,5 +1,5 @@
-@use "Base";
-@use "Color";
+@import "./Base";
+@import "./Color";
 
 @mixin shape($height, $width, $radius) {
   height: $height;
@@ -8,19 +8,19 @@
 }
 
 %shape-background {
-  background-color: Base.$primary-color;
+  background-color: $primary-color;
 }
 
 .diamond {
   @include shape(38px, 38px, 12px);
   @extend %shape-background;
-  color: Color.$white;
+  color: $white;
   transform: rotate(45deg);
 }
 
 .square {
   @include shape(42px, 42px, 4px);
-  background-color: Color.$white;
+  background-color: $white;
 }
 
 .rectangle {
@@ -31,7 +31,7 @@
 }
 
 .grey-rectangle {
-  background-color: Base.$background-color;
+  background-color: $background-color;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   height: 100px;
