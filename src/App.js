@@ -1,31 +1,32 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import './sass/App.scss';
-import Header from './Header.js'
-import Sidebar from './Sidebar.js';
-import BookingPage from './BookingPage.js';
+import Homepage from './containers/Homepage.js';
+import TestApiCall from './containers/TestAPICall/Index.js';
+import {HashRouter as Router, Routes, Link, Route, Navigate} from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <div className="container mt-4">
-        <Header />
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/homepage">Homepage</Link>
+            </li>
+            <li>
+              <Link to="/test-api-call">Test API Call</Link>
+            </li>
+          </ul>
+        </nav>
+        <hr />
+        <Routes>
+          <Route path="/homepage" element={<Homepage />}></Route>
+          <Route path="/test-api-call" element={<TestApiCall />}></Route>
+          <Route path="/" element={<Navigate to='/homepage'/>}></Route>
+        </Routes>
       </div>
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-md-3 mt-5 light-grey">
-            <Sidebar />
-          </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-6">
-            <BookingPage />
-          </div>
-          <div className="col-md-2"></div>
-        </div>
-      </div>
-      <div className="container mb-4"></div>
-    </>
+    </Router>
   );
 }
 
