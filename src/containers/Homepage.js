@@ -1,28 +1,25 @@
 import React from 'react';
-import Header from '../components/Header';
-import Sidebar from '../components/Sidebar.js';
-import BookingPage from '../components/BookingPage.js';
-import '../sass/Homepage.scss';
+import './Homepage.scss';
+import BookingDetailsCard from './../components/BookingDetailsCard';
 
 export default function Homepage() {
   return (
     <>
-      <div className="container mt-4">
-        <Header />
+      <div className="title fw-normal">
+        Bookings
       </div>
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-md-3 mt-5 light-grey">
-            <Sidebar />
-          </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-6">
-            <BookingPage />
-          </div>
-          <div className="col-md-2"></div>
-        </div>
+      <div className="fs-5 mt-5">
+        Your current upcoming stays
       </div>
-      <div className="container mb-4"></div>
+      <div className="fs-7 mt-3">
+        Please update with the properity if your travel plans should change or if you wish
+        to make any changes to your stay.
+      </div>
+      <div className="fs-7 mt-3 text-blue">
+        <span className="fa fa-chevron-right"></span>
+        <span className="ps-2">Learn more about our premium subscription</span>
+      </div>
+      <BookingDetailsCard />
     </>
   )
 }

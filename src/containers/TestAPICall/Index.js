@@ -18,24 +18,22 @@ export default function Index() {
 
   return (
     <>
-      <div className='container mt-4'>
-        <div className="row justify-content-center title fw-normal">
-          Test API Call
-        </div>
+      <div className='title fw-normal'>
+        Test API Call
       </div>
-      <div className="container mt-4">
-        <table className='table table-bordered table-dark'>
+      <div className='mt-5' style={{overflowX: 'auto', maxHeight: '600px'}}>
+        <table className='table table-bordered'>
           <thead>
             <tr className='text-center'>
-              <th scope="col">ID</th>
-              <th scope="col">Avatar</th>
-              <th scope="col">Name</th>
-              <th scope="col">Gender</th>
-              <th scope="col">Species</th>
-              <th scope="col">Status</th>
-              <th scope="col">Type</th>
-              <th scope="col">Location</th>
-              <th scope="col">Origin</th>
+              <th>ID</th>
+              <th>Avatar</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Species</th>
+              <th>Status</th>
+              <th>Type</th>
+              <th>Location</th>
+              <th>Origin</th>
             </tr>
           </thead>
           <tbody>
@@ -43,7 +41,7 @@ export default function Index() {
               APIData.map((item) => {
                 return (
                   <tr key={item.id} className="text-center">
-                    <th scope="row">{item.id}</th>
+                    <th>{item.id}</th>
                     <td><img src={item.image} alt="avatar jpeg" className='rounded' /></td>
                     <td>{item.name}</td>
                     <td>{item.gender}</td>
