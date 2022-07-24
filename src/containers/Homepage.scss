@@ -1,6 +1,6 @@
-@import "./Base";
-@import "./Color";
-@import "./Shape";
+@import "../stylesheets/Base";
+@import "../stylesheets/Color";
+@import "../stylesheets/Shape";
 
 .light-grey {
   color: $light-grey;

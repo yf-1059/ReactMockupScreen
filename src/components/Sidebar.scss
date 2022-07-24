@@ -1,0 +1,26 @@
+@import '../stylesheets/Base';
+@import '../stylesheets/Color';
+@import '../stylesheets/Shape';
+
+.inactive {
+  color: $light-grey;
+  height: 40px;
+
+  &:hover {
+    @extend %shape-background;
+    border-radius: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: $white;
+  }
+}
+
+.active {
+  @extend %shape-background;
+  border-radius: 6px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  box-shadow: 0px 3px 6px $shadow-color;
+  color: $white;
+}
+

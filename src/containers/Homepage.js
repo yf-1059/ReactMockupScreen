@@ -1,7 +1,8 @@
 import React from 'react';
-import BookingDetailsCard from './BookingDetailsCard';
+import './Homepage.scss';
+import BookingDetailsCard from './../components/BookingDetailsCard';
 
-export default function BookingPage() {
+export default function Homepage() {
   return (
     <>
       <div className="title fw-normal">
