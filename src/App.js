@@ -10,6 +10,7 @@ import Refer from './containers/Refer';
 import Contact from './containers/Contact';
 import Faq from './containers/Faq';
 import Account from './containers/Account';
+import CharacterCard from './containers/TestAPICall/CharacterCard';
 
 function App() {
   return (
@@ -25,13 +26,15 @@ function App() {
           <div className="col-md-1"></div>
           <div className="col-md-6">
             <Routes>
-              <Route path="/homepage" element={<Homepage />}></Route>
-              <Route path="/refer" element={<Refer />}></Route>
-              <Route path="/account" element={<Account />}></Route>
-              <Route path="/contact" element={<Contact />}></Route>
-              <Route path="/faq" element={<Faq />}></Route>
-              <Route path="/test-api-call" element={<TestApiCall />}></Route>
-              <Route path="/" element={<Navigate to='/homepage'/>}></Route>
+              <Route path="homepage" element={<Homepage />}></Route>
+              <Route path="refer" element={<Refer />}></Route>
+              <Route path="account" element={<Account />}></Route>
+              <Route path="contact" element={<Contact />}></Route>
+              <Route path="faq" element={<Faq />}></Route>
+              <Route path="test-api-call" element={<TestApiCall />}>
+                <Route path=":id" element={<CharacterCard />}></Route>
+              </Route>
+              <Route path="/" element={<Navigate to='homepage'/>}></Route>
             </Routes>
           </div>
           <div className="col-md-2"></div>
