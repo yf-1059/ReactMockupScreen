@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { changeUser } from '../../actions/User'
 
-export default function Index() {
+const Index = (props) => {
 
   const [APIData, setAPIData] = useState([]);
 
@@ -46,7 +48,25 @@ export default function Index() {
             {APIData.length > 0 &&
               APIData.map((item) => {
                 return (
-                    <tr key={item.id} className="text-center" onClick={() => selectedId(item.id)}>
+                    <tr key={item.id} className="text-center" 
+                      onClick={() => {
+                        var nameSplit = item.name.split(' ');
+                        var output = "";
+                        if (nameSplit.length > 1) {
+                          for ( var i = 0; i < 2; i++) {
+                            output += nameSplit[i].substring(0,1);
+                          }
+                        }
+                        else {
+                          output = nameSplit[0].substring(0,1);
+                        }
+                        selectedId(item.id);
+                        props.changeUser({
+                          name: item.name,
+                          abbr: output
+                        });
+                      }}
+                    >
                       <td>{item.id}</td>
                       <td><img src={item.image} alt="avatar jpeg" className='rounded' /></td>
                       <td>{item.name}</td>
@@ -69,3 +89,13 @@ export default function Index() {
     </>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state
+  };
+};
+
+export default connect(mapStateToProps, {
+  changeUser
+})(Index);

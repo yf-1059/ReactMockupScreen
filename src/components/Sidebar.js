@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import './Sidebar.scss';
+import { changeUser } from '../actions/User';
+import { connect } from 'react-redux';
 
-export default function Sidebar() {
+const Sidebar = (props) => {
 
+  console.log(props, "props");
   const [active, setActive] = useState("homepage");
 
   return (
     <>
       <div className="diamond d-flex justify-content-center align-items-center drop-shadow">
         <div className="fs-6 fw-semibold text-white" style={{transform: 'rotate(-45deg)'}}>
-          JD
+          {props.data.UserReducer.loginUser.abbr}
         </div>
       </div>
       <div className="fs-7 fw-semibold mt-3 text-black">
-        John Doe
+        {props.data.UserReducer.loginUser.name}
       </div>
       <div className="fs-7 fw-normal">
         Premium Nomad
@@ -69,3 +72,13 @@ export default function Sidebar() {
     </>
   )
 }
+
+const mapStateToProps = (state) => {
+  return {
+    data: state
+  };
+};
+
+export default connect(mapStateToProps, {
+  changeUser
+})(Sidebar);
