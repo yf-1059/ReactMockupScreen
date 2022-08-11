@@ -11,37 +11,43 @@ import Contact from './containers/Contact';
 import Faq from './containers/Faq';
 import Account from './containers/Account';
 import CharacterCard from './containers/TestAPICall/CharacterCard';
+import { Provider } from "react-redux";
+import configureStore from './store/config';
+
+const store = configureStore();
 
 function App() {
   return (
-    <Router>
-      <div className="container mt-4">
-        <Header />
-      </div>
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-md-3 mt-5 light-grey">
-            <Sidebar />
-          </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-6">
-            <Routes>
-              <Route path="homepage" element={<Homepage />}></Route>
-              <Route path="refer" element={<Refer />}></Route>
-              <Route path="account" element={<Account />}></Route>
-              <Route path="contact" element={<Contact />}></Route>
-              <Route path="faq" element={<Faq />}></Route>
-              <Route path="test-api-call" element={<TestApiCall />}>
-                <Route path=":id" element={<CharacterCard />}></Route>
-              </Route>
-              <Route path="/" element={<Navigate to='homepage'/>}></Route>
-            </Routes>
-          </div>
-          <div className="col-md-2"></div>
+    <Provider store={store}>
+      <Router>
+        <div className="container mt-4">
+          <Header />
         </div>
-      </div>
-      <div className="container mb-4"></div>
-    </Router>
+        <div className="container mt-5">
+          <div className="row">
+            <div className="col-md-3 mt-5 light-grey">
+              <Sidebar />
+            </div>
+            <div className="col-md-1"></div>
+            <div className="col-md-6">
+              <Routes>
+                <Route path="homepage" element={<Homepage />}></Route>
+                <Route path="refer" element={<Refer />}></Route>
+                <Route path="account" element={<Account />}></Route>
+                <Route path="contact" element={<Contact />}></Route>
+                <Route path="faq" element={<Faq />}></Route>
+                <Route path="test-api-call" element={<TestApiCall />}>
+                  <Route path=":id" element={<CharacterCard />}></Route>
+                </Route>
+                <Route path="/" element={<Navigate to='homepage'/>}></Route>
+              </Routes>
+            </div>
+            <div className="col-md-2"></div>
+          </div>
+        </div>
+        <div className="container mb-4"></div>
+      </Router>
+    </Provider>
   );
 }
 
